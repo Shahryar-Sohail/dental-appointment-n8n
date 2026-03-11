@@ -67,8 +67,8 @@ const Index = () => {
       handleNext();
     }
   };
-  const url = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
   const handleSubmit = async () => {
+    const url = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
     setSubmitting(true);
     try {
       await fetch(url, {
