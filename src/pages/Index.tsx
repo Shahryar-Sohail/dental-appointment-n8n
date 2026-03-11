@@ -20,6 +20,7 @@ const Index = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+
   const question = QUESTIONS[step];
 
   const transition = useCallback((cb: () => void) => {
@@ -66,11 +67,11 @@ const Index = () => {
       handleNext();
     }
   };
-
+  const url = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      await fetch("https://shahryarsohail.app.n8n.cloud/webhook/101b6c4f-11e9-482d-ac2a-8658fb0c3745", {
+      await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -110,8 +111,8 @@ const Index = () => {
                         setError("");
                       }}
                       className={`block w-full border-b py-3 text-left font-body text-lg transition-colors duration-200 ${currentValue === opt
-                          ? "border-accent text-foreground"
-                          : "border-input text-muted-foreground hover:text-foreground"
+                        ? "border-accent text-foreground"
+                        : "border-input text-muted-foreground hover:text-foreground"
                         }`}
                     >
                       {opt}
