@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/source-serif-4/400.css';
+
+@layer base {
+  :root {
+    /* Warm Concrete */
+    --background: 60 7% 95%;
+    --foreground: 60 2% 23%;
+
+    /* Cards same as bg */
+    --card: 60 7% 95%;
+    --card-foreground: 60 2% 23%;
+
+    --popover: 60 7% 95%;
+    --popover-foreground: 60 2% 23%;
+
+    /* Volcanic Rock */
+    --primary: 60 2% 23%;
+    --primary-foreground: 60 7% 95%;
+
+    /* Dry Clay */
+    --accent: 30 12% 66%;
+    --accent-foreground: 60 2% 23%;
+
+    --secondary: 30 8% 88%;
+    --secondary-foreground: 60 2% 23%;
+
+    --muted: 30 8% 88%;
+    --muted-foreground: 60 2% 40%;
+
+    /* Sage */
+    --success: 100 10% 35%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 60 7% 95%;
+
+    --border: 30 12% 66%;
+    --input: 30 8% 82%;
+    --ring: 30 12% 66%;
+
+    --radius: 0.25rem;
+
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Source Serif 4', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
